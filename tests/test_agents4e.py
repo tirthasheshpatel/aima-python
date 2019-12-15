@@ -7,10 +7,9 @@ from agents4e import (ReflexVacuumAgent, ModelBasedVacuumAgent, TrivialVacuumEnv
                       SimpleReflexAgentProgram, ModelBasedReflexAgentProgram, Wall, Gold, Explorer, Thing, Bump,
                       Glitter, WumpusEnvironment, Pit, VacuumEnvironment, Dirt, Direction, Agent)
 
-random.seed("aima-python")
-
 
 def test_move_forward():
+    random.seed("aima-python")
     d = Direction("up")
     l1 = d.move_forward((0, 0))
     assert l1 == (0, -1)
@@ -32,6 +31,7 @@ def test_move_forward():
 
 
 def test_add():
+    random.seed("aima-python")
     d = Direction(Direction.U)
     l1 = d + "right"
     l2 = d + "left"
@@ -58,6 +58,7 @@ def test_add():
 
 
 def test_RandomAgentProgram():
+    random.seed("aima-python")
     # create a list of all the actions a Vacuum cleaner can perform
     list = ['Right', 'Left', 'Suck', 'NoOp']
     # create a program and then an object of the RandomAgentProgram
@@ -88,6 +89,7 @@ def test_RandomVacuumAgent():
 
 
 def test_TableDrivenAgent():
+    random.seed("aima-python")
     loc_A, loc_B = (0, 0), (1, 0)
     # table defining all the possible states of the agent
     table = {((loc_A, 'Clean'),): 'Right',
@@ -122,6 +124,7 @@ def test_TableDrivenAgent():
 
 
 def test_ReflexVacuumAgent():
+    random.seed("aima-python")
     # create an object of the ReflexVacuumAgent
     agent = ReflexVacuumAgent()
     # create an object of TrivialVacuumEnvironment
@@ -135,6 +138,7 @@ def test_ReflexVacuumAgent():
 
 
 def test_SimpleReflexAgentProgram():
+    random.seed("aima-python")
     class Rule:
 
         def __init__(self, state, action):
@@ -168,6 +172,7 @@ def test_SimpleReflexAgentProgram():
 
 
 def test_ModelBasedReflexAgentProgram():
+    random.seed("aima-python")
     class Rule:
 
         def __init__(self, state, action):
@@ -201,6 +206,7 @@ def test_ModelBasedReflexAgentProgram():
 
 
 def test_ModelBasedVacuumAgent():
+    random.seed("aima-python")
     # create an object of the ModelBasedVacuumAgent
     agent = ModelBasedVacuumAgent()
     # create an object of TrivialVacuumEnvironment
@@ -214,6 +220,7 @@ def test_ModelBasedVacuumAgent():
 
 
 def test_TableDrivenVacuumAgent():
+    random.seed("aima-python")
     # create an object of the TableDrivenVacuumAgent
     agent = TableDrivenVacuumAgent()
     # create an object of the TrivialVacuumEnvironment
@@ -227,6 +234,7 @@ def test_TableDrivenVacuumAgent():
 
 
 def test_compare_agents():
+    random.seed("aima-python")
     environment = TrivialVacuumEnvironment
     agents = [ModelBasedVacuumAgent, ReflexVacuumAgent]
 
@@ -244,6 +252,7 @@ def test_compare_agents():
 
 
 def test_TableDrivenAgentProgram():
+    random.seed("aima-python")
     table = {(('foo', 1),): 'action1',
              (('foo', 2),): 'action2',
              (('bar', 1),): 'action3',
@@ -257,6 +266,7 @@ def test_TableDrivenAgentProgram():
 
 
 def test_Agent():
+    random.seed("aima-python")
     def constant_prog(percept):
         return percept
 
@@ -266,6 +276,7 @@ def test_Agent():
 
 
 def test_VacuumEnvironment():
+    random.seed("aima-python")
     # initialize Vacuum Environment
     v = VacuumEnvironment(6, 6)
     # get an agent
@@ -293,6 +304,7 @@ def test_VacuumEnvironment():
 
 
 def test_WumpusEnvironment():
+    random.seed("aima-python")
     def constant_prog(percept):
         return percept
 
@@ -345,6 +357,7 @@ def test_WumpusEnvironment():
 
 
 def test_WumpusEnvironmentActions():
+    random.seed(9)
     def constant_prog(percept):
         return percept
 
